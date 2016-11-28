@@ -188,7 +188,7 @@
             <artifactId>fst</artifactId>
         </dependency>
     </dependencies>
-    <build>
+  <build>
         <plugins>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -229,5 +229,5 @@
                 </executions>
             </plugin>
         </plugins>
-    </build>
+    </build> 
 </project>

@@ -22,8 +22,16 @@
 
     <dubbo:application name="demo-provider" owner="programmer" organization="dubbox"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="${zk.url}"/>
 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesMode"  value="2">
+		</property>
+		<property name="location">
+			<value>classpath:provider.properties</value>
+		</property>
+	
+	</bean>
     <!--uncomment this if you want to test dubbo's monitor-->
     <!--<dubbo:monitor protocol="registry"/>-->
 
@@ -56,7 +64,7 @@
                     com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
 
     <!-- use the external tomcat or other server with the servlet approach; the port and contextpath must be exactly the same as those in external server -->
-    <!--<dubbo:protocol name="rest" port="8888" contextpath="services" server="servlet"/>-->
+    <!--  dubbo:protocol name="rest" port="8888" contextpath="services" server="servlet"/-->
 
     <dubbo:protocol name="http" port="8889"/>
     <dubbo:protocol name="hessian" port="8890"/>
