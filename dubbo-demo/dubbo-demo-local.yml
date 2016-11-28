@@ -23,6 +23,7 @@ dubbo-demo-consumer:
   restart: always
   links:
     - zookeeper
+    - dubbo-demo-provider
   ports:
     - 8080
   environment:
