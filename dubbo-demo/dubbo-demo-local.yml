@@ -27,3 +27,5 @@ dubbo-demo-consumer:
     - 8080
   environment:
     - zk.url=zookeeper://zookeeper:2181
+  command: /bin/sh /opt/dubbo-demo-consumer-2.8.4/bin/start.sh
+
