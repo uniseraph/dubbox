@@ -48,6 +48,6 @@ else
 fi
 
 echo -e "Starting the $SERVER_NAME ...\c"
-java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS -classpath $CONF_DIR:$LIB_JARS com.alibaba.dubbo.container.Main > $STDOUT_FILE 2>&1
+java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS -classpath $CONF_DIR:$LIB_JARS com.alibaba.dubbo.container.Main | tee $STDOUT_FILE
 
 echo "STDOUT: $STDOUT_FILE"
